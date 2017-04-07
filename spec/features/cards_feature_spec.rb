@@ -6,5 +6,10 @@ feature 'cards' do
       visit '/cards'
       expect(page.status_code).to eq 200
     end
+
+    scenario 'fool card should be present' do
+      visit '/cards'
+      expect(page).to have_content "The Fool"
+    end
   end
 end
